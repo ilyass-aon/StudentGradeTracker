@@ -27,7 +27,18 @@ public class Main {
         }
         for ( Student s : students){
             System.out.println(s);
+
+
         }
+        // Calcul et affichage
+        double average = Student.Calculermoy(students);
+        String minGrade = Student.findMinGrade(students);
+        String maxGrade = Student.findMaxGrade(students);
+
+        System.out.println("\nStatistiques des notes :");
+        System.out.println("Moyenne générale : " + average);
+        System.out.println("Note minimale : " + minGrade);
+        System.out.println("Note maximale : " + maxGrade);
         sc.close();
 
     }
