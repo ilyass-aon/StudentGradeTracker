@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Student {
+public class Student implements Comparable<Student> {
    private final String nom;
    private Double note;
 
@@ -36,14 +36,14 @@ public class Student {
    // find Min Grade :
     public static String findMinGrade(ArrayList<Student> s){
         double min = s.get(0).getNote();
-        String name="";
+        String name=s.get(0).getNom();
         for (Student student : s) {
             if (student.getNote() < min) {
                 min = student.getNote();
-                name=student.getNom();
+                name = student.getNom();
             }
         }
-        return "Student [nom=" + name + ", note=" + min + "]";
+        return " [nom=" + name + ", note=" + min + "]";
     }
     // find Max Grade :
     public static String findMaxGrade(ArrayList<Student> s){
@@ -55,7 +55,11 @@ public class Student {
                nom = student.getNom();
            }
        }
-        return "Student [nom=" + nom + ", note=" + max + "]";
+        return " [nom=" + nom + ", note=" + max + "]";
+    }
+    @Override
+    public int compareTo(Student o) {
+       return Double.compare(this.note, o.note);
     }
 
 

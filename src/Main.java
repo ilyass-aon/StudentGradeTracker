@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class Main {
@@ -37,8 +38,14 @@ public class Main {
 
         System.out.println("\nStatistiques des notes :");
         System.out.println("Moyenne générale : " + average);
-        System.out.println("Note minimale : " + minGrade);
-        System.out.println("Note maximale : " + maxGrade);
+        System.out.println("l'étudiant avec la note minimale : " + minGrade);
+        System.out.println("l'étudiant avec la note maximale : " + maxGrade);
+
+        Collections.sort(students);
+        System.out.println(" Liste des étudiants triée par note décroissante :");
+        for (Student s : students){
+            System.out.println(s);
+        }
         sc.close();
 
     }
